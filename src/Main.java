@@ -19,6 +19,15 @@ public class Main {
 
         System.out.println(depth.size() + " lines loaded.");
 
+        int count = 0;
+        int prev = -1;
+        for (int current : depth) {
+            if (prev != -1 && current > prev) {
+                count++;
+            }
+            prev = current;
+        }
 
+        System.out.println(count + " increases.");
     }
 }
